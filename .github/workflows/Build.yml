@@ -1,0 +1,32 @@
+name: Build_Tiny_Linux_OS
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Update Aptitude
+      run: sudo apt-get update
+    
+    - name: Install Requiremnts
+      run: sudo apt-get -y install wget make gawk gcc bc bison flex xorriso libelf-dev libssl-dev
+    
+    - name: Change Permission
+      run: chmod +x tiny_linux.sh.sh
+
+    - name: Start Build
+      run: ./tiny_linux.sh.sh 
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: OS
+        path: Tiny_Linux_OS.iso
