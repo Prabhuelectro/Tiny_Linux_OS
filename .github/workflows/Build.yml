@@ -20,10 +20,10 @@ jobs:
       run: sudo apt-get -y install wget make gawk gcc bc bison flex xorriso libelf-dev libssl-dev
     
     - name: Change Permission
-      run: chmod +x tiny_linux.sh.sh
+      run: chmod +x tiny_linux.sh
 
     - name: Start Build
-      run: ./tiny_linux.sh.sh 
+      run: ./tiny_linux.sh
     
     - name: Upload artifact
       uses: actions/upload-artifact@v1.0.0
