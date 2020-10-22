@@ -43,3 +43,5 @@ echo 'default kernel.gz initrd=rootfs.gz' > ./isolinux.cfg
 xorriso -as mkisofs -o ../Tiny_Linux_OS.iso -b isolinux.bin -c boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table ./
 cd ..
 set +ex
+
+echo 'hi'
