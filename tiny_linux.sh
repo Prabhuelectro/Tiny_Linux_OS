@@ -23,6 +23,7 @@ rm -f linuxrc
 
 mkdir dev proc sys
 
+echo 'Hello'
 echo '#!/bin/sh' > init
 echo 'dmesg -n 1' >> init
 echo 'mount -t devtmpfs none /dev' >> init
